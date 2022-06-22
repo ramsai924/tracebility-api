@@ -1,0 +1,10 @@
+applications:
+  - name: TraceabilityAPI
+    path: ./
+    routes:
+      - route: TraceabilityAPI.apps.eu1.mindsphere.io
+    buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack/
+    memory: 256MB
+    services:
+      - hdc-mongodb-service

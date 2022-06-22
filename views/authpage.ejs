@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .container_body {
+            max-width: 600px;
+            margin: 0 auto;
+
+
+        }
+
+        .form_section {
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background-color: rgb(208, 209, 209);
+            margin-top: 40%;
+            padding: 30px 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .input_section {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .input_section>input {
+            padding: 8px;
+            width: 100%;
+        }
+
+        .input_section>input:focus {
+            /* outline: 0; */
+            outline-color: rgb(72, 72, 207);
+            ;
+        }
+
+        .input_submit {
+            margin: 5px 0;
+        }
+
+        .input_submit>button {
+            padding: 8px 15px;
+            background-color: rgb(72, 72, 207);
+            outline: 0;
+            border: 0;
+            font-weight: 600;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container_body">
+        <div class="form_section">
+            <h2 style="text-align: center;">Authenticate user</h2>
+            <form action="/system-user-login" method="post">
+                <div class="input_section">
+                    <input type="text" name="userId" placeholder="Enter user ID">
+                </div>
+                <div class="input_section">
+                    <input type="password" name="password" placeholder="Enter password">
+                </div>
+                <div class="input_submit">
+                    <button>submit</button>
+                </div>
+            </form>
+            <% if(message !==null) {%>
+                <p style="text-align: center;color: red;">
+                    <%= message %>
+                </p>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
